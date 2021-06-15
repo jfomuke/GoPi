@@ -25,7 +25,7 @@ def stop_button(event):
 
 window = tk.Tk()
 
-frame1 = tk.Frame(master=window, width=400, height=400, bg="red")
+frame1 = tk.Frame(master=window, width=300, height=300, bg="red")
 frame1.pack()
 
 btn1 = tk.Button(master=frame1, text="Start", width=20, height=5)
