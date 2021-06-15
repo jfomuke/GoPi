@@ -4,7 +4,13 @@ import time
 import picamera
 
 camera1 = picamera.PiCamera()
-# camera1.resolution = (1280, 720)
+
+# V2 PiCamera:
+# 3280x2464 , 15 fps max, FoV Full
+# 1640x1232, 40 fps max, Fox Full
+# 1280x720, 90fps max, FoV Limited
+camera1.resolution = (1640, 1232)
+camera1.framerate = 40
 
 def start_button(event):
     try:
