@@ -4,24 +4,26 @@ import time
 import picamera
 
 camera1 = picamera.PiCamera()
-camera1.resolution = (1280, 720)
+# camera1.resolution = (1280, 720)
 
 def start_button(event):
     try:
+        # true false for duplicate presses          
         fileName = (int(time.time()))
         fileName = str(fileName) + ".h264"
         camera1.start_recording(fileName)
+        # camera1.wait_recording(5)
     finally:
         print("Start button clicked!")
 
 def stop_button(event):
     try:
-        camera.stop_recording()
+        camera1.stop_recording()
+        camera1.close()
     finally:
         print("Stop button clicked! Recording has been stopped & Saved")
 
 window = tk.Tk()
-camera = picamera.PiCamera()
 
 frame1 = tk.Frame(master=window, width=400, height=400, bg="red")
 frame1.pack()
