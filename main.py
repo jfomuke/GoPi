@@ -10,7 +10,7 @@ camera1 = picamera.PiCamera()
 # 1640x1232, 40 fps max, Fox Full
 # 1280x720, 90fps max, FoV Limited
 camera1.resolution = (1640, 1232)
-camera1.framerate = 40
+camera1.framerate = 30
 
 def start_button(event):
     try:
@@ -25,13 +25,13 @@ def start_button(event):
 def stop_button(event):
     try:
         camera1.stop_recording()
-        camera1.close()
+        # camera1.close()
     finally:
         print("Stop button clicked! Recording has been stopped & Saved")
 
 window = tk.Tk()
 
-frame1 = tk.Frame(master=window, width=300, height=300, bg="red")
+frame1 = tk.Frame(master=window, width=400, height=400, bg="red")
 frame1.pack()
 
 btn1 = tk.Button(master=frame1, text="Start", width=20, height=5)
@@ -42,6 +42,10 @@ btn1.bind('<Button-1>', start_button)
 btn2 = tk.Button(master=frame1, text="Stop", width=20, height=5)
 btn2.place(x=0, y=100)
 btn2.bind('<Button-1>', stop_button)
+
+btn3 = tk.Button(master=frame1, text="Temp", width=20, height=5)
+btn3.place(x=200, y=0)
+btn3.bind('<Button-1>', start_button)
 
 window.mainloop()
 
