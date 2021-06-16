@@ -7,9 +7,10 @@ camera1 = picamera.PiCamera()
 
 # V2 PiCamera:
 # 3280x2464 , 15 fps max, FoV Full
-# 1640x1232, 40 fps max, Fox Full
+# 1640x1232, 40 fps max, Fov Full
 # 1280x720, 90fps max, FoV Limited
 camera1.resolution = (1640, 1232)
+# camera1.resolution = (1920, 1080)
 camera1.framerate = 30
 
 def start_button(event):
