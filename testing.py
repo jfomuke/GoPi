@@ -1,11 +1,11 @@
 import picamera
 import time
 
-with picamera.PiCamera() as camera:
-    camera.resolution = (640, 480)
-    camera.framerate = 24
-    camera.start_preview()
-    camera.annotate_text = 'Hello world!'
-    time.sleep(2)
-    # Take a picture including the annotation
-    camera.capture('foo.jpg')
+camera1 = picamera.PiCamera()
+camera1.resolution = (1640, 1232)
+camera1.framerate = 30
+camera1.start_preview()
+camera1.annotate_text = 'Hello world!'
+time.sleep(5)
+camera1.capture('foo.jpg')
+camera1.stop_preview()
