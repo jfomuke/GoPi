@@ -1,8 +1,11 @@
-
 import picamera
-camera1 = picamera.PiCamera()
-camera1.start_recording('test.h264')
-camera1.wait_recording(5)
-camera1.stop_recording()
-camera1.close()
+import time
 
+with picamera.PiCamera() as camera:
+    camera.resolution = (640, 480)
+    camera.framerate = 24
+    camera.start_preview()
+    camera.annotate_text = 'Hello world!'
+    time.sleep(2)
+    # Take a picture including the annotation
+    camera.capture('foo.jpg')
